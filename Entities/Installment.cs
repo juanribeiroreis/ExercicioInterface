@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Globalization;
 
 namespace ExercicioInterface.Entities
 {
@@ -13,6 +12,12 @@ namespace ExercicioInterface.Entities
         {
             DueDate = dueDate;
             Amount = amount;
+        }
+        public override string ToString()
+        {
+            return DueDate.ToString("dd/MM/yyyy")
+                + " - "
+                + Amount.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
